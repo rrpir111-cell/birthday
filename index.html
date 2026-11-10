@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Little Surprise ♡</title>
+
+<style>
+
+* {
+
+    box-sizing: border-box;
+
+}
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    background: #ffe6ef;
+
+    font-family: Arial, sans-serif;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: #a65372;
+
+    padding: 20px;
+
+}
+
+.card {
+
+    background: #fff7fa;
+
+    width: 100%;
+
+    max-width: 400px;
+
+    padding: 30px 20px;
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    box-shadow: 0 5px 20px #e9b9ca;
+
+}
+
+h1 {
+
+    color: #c05c83;
+
+    font-size: 27px;
+
+}
+
+p {
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+}
+
+.teddy-photo {
+
+    width: 190px;
+
+    height: 190px;
+
+    object-fit: contain;
+
+    margin: 20px auto;
+
+    display: block;
+
+    border-radius: 20px;
+
+}
+
+.teddies {
+
+    font-size: 65px;
+
+    margin: 20px 0;
+
+}
+
+button {
+
+    background: #e99bb7;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 20px;
+
+    padding: 12px 30px;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    margin: 8px;
+
+}
+
+button:hover {
+
+    background: #d77d9e;
+
+}
+
+input {
+
+    width: 90%;
+
+    padding: 13px;
+
+    margin: 10px 0;
+
+    border: 1px solid #e8b6c8;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    font-size: 17px;
+
+}
+
+#message {
+
+    color: #c05c83;
+
+}
+
+/* صفحة عيد الميلاد */
+
+.final-page {
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    padding: 30px 15px;
+
+    border-radius: 20px;
+
+    background-image:
+
+      linear-gradient(
+
+        rgba(0, 0, 0, 0.12),
+
+        rgba(0, 0, 0, 0.12)
+
+      ),
+
+      url("https://uploads.onecompiler.io/458tdze7n/1794343113393/photo_6024062928727773765_y.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+.letter {
+
+    background: transparent;
+
+    padding: 15px;
+
+    text-align: center;
+
+    max-width: 100%;
+
+    transform: none;
+
+}
+
+.letter h1 {
+
+    color: white;
+
+    font-size: 27px;
+
+    text-shadow: 0 2px 7px rgba(50, 15, 30, 0.95);
+
+}
+
+.letter p {
+
+    color: white;
+
+    font-size: 17px;
+
+    line-height: 2;
+
+    text-shadow: 0 2px 7px rgba(50, 15, 30, 0.95);
+
+}
+
+.hearts {
+
+    font-size: 25px;
+
+    letter-spacing: 8px;
+
+    text-shadow: 0 2px 8px rgba(50, 15, 30, 0.5);
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card" id="content">
+
+    <h1>عندي لك مفاجأة ♡</h1>
+
+    <img
+
+      class="teddy-photo"
+
+      src="https://uploads.onecompiler.io/458tdze7n/1794344869666/%C3%98%C2%AF%C3%98%C2%A8.jpg"
+
+      alt="صورة الدبدوب"
+
+    >
+
+    <p>بس قبل ما تدخل، عندي سؤال صغير...</p>
+
+    <p>اكتب كلمة المرور</p>
+
+    <input type="password" id="password"
+
+    placeholder="كلمة المرور">
+
+    <br>
+
+    <button onclick="checkPassword()">دخول ♡</button>
+
+    <p id="message"></p>
+
+</div>
+
+<script>
+
+function checkPassword() {
+
+    const password = document.getElementById("password").value;
+
+    if (password === "0712") {
+
+        showQuestion();
+
+    } else {
+
+        document.getElementById("message").innerHTML =
+
+        "هممم، كلمة المرور مو صحيحة 🥺";
+
+    }
+
+}
+
+function showQuestion() {
+
+    document.getElementById("content").innerHTML = `
+
+        <h1>تقبل رسالتي؟ ♡</h1>
+
+        <div class="teddies">🧸💕🧸</div>
+
+        <button onclick="acceptMessage()">ايوا</button>
+
+        <button onclick="sayNo()">لا</button>
+
+    `;
+
+}
+
+function sayNo() {
+
+    document.getElementById("content").innerHTML = `
+
+        <h1>لييييه زعلت زعلت منك ارجع وحط ايوا 🥺</h1>
+
+        <button onclick="showQuestion()">رجوع</button>
+
+        <button onclick="sayNoAgain()">لا</button>
+
+    `;
+
+}
+
+function sayNoAgain() {
+
+    document.getElementById("content").innerHTML = `
+
+        <h1>فصولييي 😔</h1>
+
+        <button onclick="showQuestion()">رجوع</button>
+
+    `;
+
+}
+
+function acceptMessage() {
+
+    document.getElementById("content").innerHTML = `
+
+        <h1>باخذ من وقتك شوي ♡</h1>
+
+        <p>اتمنى تعجبك الهدية</p>
+
+        <button onclick="finalMessage()">التالي</button>
+
+    `;
+
+}
+
+function finalMessage() {
+
+    document.getElementById("content").innerHTML = `
+
+        <div class="final-page">
+
+            <div class="hearts">♡ 💗 ♡ 💕 ♡ 💗 ♡</div>
+
+            <div class="letter">
+
+                <h1>كل عام وانت بخير ياروح روحي ❤️</h1>
+
+                <p>
+
+                ثاني يوم ميلاد لك معي وانا مره مبسوطه انك كبرت سنة وانا معك،
+
+                وعسى كل سنينك الجايه أكون معك فيها وأشوفك تكبر وتحقق كل اللي تتمناه.
+
+                الله يجعل أيامك كلها سعادة وفرح، ويبعد عنك كل شي يضايقك.
+
+                </p>
+
+                <p>
+
+                ما تدري قد ايش أنا مبسوطه بوجودك بحياتي،
+
+                وقد ايش أحب إننا نعيش هالتفاصيل الحلوه مع بعض.
+
+                أتمنى كل سنة تمر علينا نكون أقرب لبعض وأكثر سعادة،
+
+                وأتمنى أكون دايم من الناس اللي يخلون أيامك أحلى.
+
+                </p>
+
+                <p>
+
+                الله يخليك لي ولا يحرمني منك، وعقبال ما نحتفل بأعياد ميلاد كثير سوا،
+
+                وأشوفك كل سنة وأنت أسعد وأحسن من السنة اللي قبلها.
+
+                أحبك مره، وكل عام وأنت معي ❤️
+
+                </p>
+
+                <p>
+
+                وهذي هديه انا سويتها بيدي اتمنى تعجبك❤️
+
+                <br>
+
+                ❤️من لونتك
+
+                </p>
+
+            </div>
+
+            <div class="hearts">💕 ♡ 💗 ♡ 💕 ♡</div>
+
+        </div>
+
+    `;
+
+}
+
+</script>
+
+</body>
+
+</html>
